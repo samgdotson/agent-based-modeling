@@ -182,6 +182,8 @@ class Schelling(object):
 		fig, ax = plt.subplots()
 		x = np.arange(0, len(self.changes_per_iter), 1)
 		ax.plot(x, self.changes_per_iter, label="Number of Changes per Iteration")
+		ax.set_xlabel("Iteration Number")
+		ax.set_ylabel("Number of Moves Per Iteration")
 		ax.set_title(title, fontsize=10, fontweight='bold')
 		plt.savefig(file_name)
 
@@ -200,12 +202,12 @@ if __name__ == "__main__":
 	schelling1.populate()
 
 	# initial plot
-	schelling1.plot("Two Races: Initial State", '../schelling_1_init.png')
+	schelling1.plot("Two Races: Initial State", '../figures/schelling_1_init.png')
 
 	schelling1.update()
 	# final plot
-	schelling1.plot("Two Races: Final State", '../schelling_1_final.png')
-	schelling1.plot_nchanges("Tolerance = {}%".format(tol*100), '../schelling_1_changes.png')
+	schelling1.plot("Two Races: Final State", '../figures/schelling_1_final.png')
+	schelling1.plot_nchanges("Tolerance = {}%".format(tol*100), '../figures/schelling_1_changes.png')
 
 	# second simulation
 	w = 50
@@ -219,12 +221,12 @@ if __name__ == "__main__":
 	schelling2.populate()
 
 	# initial plot
-	schelling2.plot("Two Races: Initial State", '../schelling_2_init.png')
+	schelling2.plot("Two Races: Initial State", '../figures/schelling_2_init.png')
 
 	schelling2.update()
 	# final plot
-	schelling2.plot("Two Races: Final State", '../schelling_2_final.png')
-	schelling2.plot_nchanges("Tolerance = {}%".format(tol*100), '../schelling_2_changes.png')
+	schelling2.plot("Two Races: Final State", '../figures/schelling_2_final.png')
+	schelling2.plot_nchanges("Tolerance = {}%".format(tol*100), '../figures/schelling_2_changes.png')
 
 
 	# third simulation 
@@ -239,9 +241,9 @@ if __name__ == "__main__":
 	schelling3.populate()
 
 	# initial plot
-	schelling3.plot("Two Races: Initial State", '../schelling_3_init.png')
+	schelling3.plot("Two Races: Initial State", '../figures/schelling_3_init.png')
 
 	schelling3.update()
 	# final plot
-	schelling3.plot("Two Races: Final State", '../schelling_3_final.png')
-	schelling3.plot_nchanges("Tolerance = {}%".format(tol*100), '../schelling_3_changes.png')
+	schelling3.plot("Two Races: Final State", '../figures/schelling_3_final.png')
+	schelling3.plot_nchanges("Tolerance = {}%".format(tol*100), '../figures/schelling_3_changes.png')
