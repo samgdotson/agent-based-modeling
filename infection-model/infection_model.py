@@ -56,11 +56,11 @@ class VirusModel(object):
         healthy = self.inhabited[self.n_infected:]
         infected = self.inhabited[:self.n_infected]
 
-        self.healthy_agents = dict(list(self.healthy_agents.items()) + list(dict(zip(healthy,
-                                                                                     [0] * len(healthy))).items()))
+        self.healthy_agents = dict(list(self.healthy_agents.items(
+        )) + list(dict(zip(healthy, [0] * len(healthy))).items()))
 
-        self.infected_agents = dict(list(self.infected_agents.items()) + list(dict(zip(infected,
-                                                                                       [0] * len(infected))).items()))
+        self.infected_agents = dict(list(self.infected_agents.items(
+        )) + list(dict(zip(infected, [0] * len(infected))).items()))
 
     def contracted(self, agent):
         """
@@ -161,8 +161,13 @@ class VirusModel(object):
         x = agent[0]
         y = agent[1]
 
-        neighbors = list(itertools.product(range(x - self.max_range, x + (self.max_range + 1)),
-                                           range(y - self.max_range, y + (self.max_range + 1))))
+        neighbors = list(itertools.product(range(x -
+                                                 self.max_range, x +
+                                                 (self.max_range +
+                                                  1)), range(y -
+                                                             self.max_range, y +
+                                                             (self.max_range +
+                                                              1))))
         # neighbors.remove((x,y)) # remove the current agent --> forces
         # movement
         # get inhabited neighors list
@@ -278,8 +283,8 @@ if __name__ == '__main__':
     virus1.plot("Onset of Outbreak", "/virus1_init.png", show=False)
     virus1.update(True)
     virus1.plot("End of Outbreak", "/virus1_final.png", show=False)
-    virus1.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                         "/virus1_populations.png", show=False)
+    virus1.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(
+        death_rate * 100, ratio_empty * 100), "/virus1_populations.png", show=False)
 
     ratio_empty = 0.95
     virus1_2 = VirusModel("02", height, width, death_rate, cycle_time,
@@ -289,8 +294,8 @@ if __name__ == '__main__':
     virus1_2.plot("Onset of Outbreak", "/virus1_2_init.png", show=False)
     virus1_2.update(True)
     virus1_2.plot("End of Outbreak", "/virus1_2_final.png", show=False)
-    virus1_2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                           "/virus1_2_populations.png", show=False)
+    virus1_2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(
+        death_rate * 100, ratio_empty * 100), "/virus1_2_populations.png", show=False)
 
     death_rate = 0.06
     ratio_empty = 0.9
@@ -301,8 +306,8 @@ if __name__ == '__main__':
     virus2.plot("Onset of Outbreak", "/virus2_init.png", show=False)
     virus2.update(True)
     virus2.plot("End of Outbreak", "/virus2_final.png", show=False)
-    virus2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                         "/virus2_populations.png", show=False)
+    virus2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(
+        death_rate * 100, ratio_empty * 100), "/virus2_populations.png", show=False)
 
     ratio_empty = 0.95
     virus2_2 = VirusModel("04", height, width, death_rate, cycle_time,
@@ -312,8 +317,8 @@ if __name__ == '__main__':
     virus2_2.plot("Onset of Outbreak", "/virus2_2_init.png", show=False)
     virus2_2.update(True)
     virus2_2.plot("End of Outbreak", "/virus2_2_final.png", show=False)
-    virus2_2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                           "/virus2_2_populations.png", show=False)
+    virus2_2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(
+        death_rate * 100, ratio_empty * 100), "/virus2_2_populations.png", show=False)
 
     death_rate = 0.12
     ratio_empty = 0.9
@@ -324,8 +329,8 @@ if __name__ == '__main__':
     virus3.plot("Onset of Outbreak", "/virus3_init.png", show=False)
     virus3.update(True)
     virus3.plot("End of Outbreak", "/virus3_final.png", show=False)
-    virus3.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                         "/virus3_populations.png", show=False)
+    virus3.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(
+        death_rate * 100, ratio_empty * 100), "/virus3_populations.png", show=False)
 
     ratio_empty = 0.95
     virus3_2 = VirusModel("06", height, width, death_rate, cycle_time,
@@ -335,5 +340,9 @@ if __name__ == '__main__':
     virus3_2.plot("Onset of Outbreak", "/virus3_2_init.png", show=False)
     virus3_2.update(True)
     virus3_2.plot("End of Outbreak", "/virus3_2_final.png", show=False)
-    virus3_2.plot_nchanges("Population Trends: Death Rate={}%, Sparsity={}%".format(death_rate * 100, ratio_empty * 100),
-                           "/virus3_2_populations-test.png", show=False)
+    virus3_2.plot_nchanges(
+        "Population Trends: Death Rate={}%, Sparsity={}%".format(
+            death_rate * 100,
+            ratio_empty * 100),
+        "/virus3_2_populations-test.png",
+        show=False)
